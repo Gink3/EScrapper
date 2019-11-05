@@ -23,7 +23,7 @@ for i in range(6,len(soup.findAll('a'))+1): #'a' tags are for links
     one_a_tag = soup.findAll('a')[i]        #Grabs 1 tag at a time
     link = one_a_tag['href']                #set the link to the value of the href
     name = link.replace("%20","")           #Makes the file names readable
-    print(name)
-    download_url = 'http://kunalsdatabase.com/ebooks/2016/'+ link
-    urllib.request.urlretrieve(download_url,name) 
-    time.sleep(1) #pause the code for a sec
+    print('Downloaded: '+name)
+    download_url = 'http://kunalsdatabase.com/ebooks/2016/'+ link   #Creates a download filepath
+    urllib.request.urlretrieve(download_url,name)           #feeds download link and file name for download 
+    time.sleep(1) #pause to not spam server
